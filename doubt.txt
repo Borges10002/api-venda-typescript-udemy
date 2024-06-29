@@ -1,0 +1,5 @@
+
+
+Eslint
+https://www.aluiziodeveloper.com.br/eslint/
+ yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin

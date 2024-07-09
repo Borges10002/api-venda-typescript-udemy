@@ -3,3 +3,8 @@
 Eslint
 https://www.aluiziodeveloper.com.br/eslint/
  yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+
+
+bibliotecas
+ yarn add express cors express-async-errors
+ yarn add -D @types/express @types/cors

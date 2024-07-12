@@ -8,3 +8,4 @@ https://www.aluiziodeveloper.com.br/eslint/
 bibliotecas
  yarn add express cors express-async-errors
  yarn add -D @types/express @types/cors
+ yarn add typeorm reflect-metadata pg

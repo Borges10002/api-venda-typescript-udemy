@@ -9,3 +9,9 @@ bibliotecas
  yarn add express cors express-async-errors
  yarn add -D @types/express @types/cors
  yarn add typeorm reflect-metadata pg
+
+ docker
+  criar
+   docker run --name postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+  verfificar se esta ativo
+ docker ps

@@ -9,9 +9,22 @@ bibliotecas
  yarn add express cors express-async-errors
  yarn add -D @types/express @types/cors
  yarn add typeorm reflect-metadata pg
+ yarn add -D tsconfig-paths
 
  docker
   criar
    docker run --name postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
   verfificar se esta ativo
  docker ps
+
+CORREÇÃO para os campos com tipo TIMESTAMP
+ {
+  name: 'created_at',
+  type: 'timestamp with time zone',
+  default: 'now()',
+},
+{
+  name: 'updated_at',
+  type: 'timestamp with time zone',
+  default: 'now()',
+},

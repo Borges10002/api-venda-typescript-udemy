@@ -28,3 +28,10 @@ CORREÇÃO para os campos com tipo TIMESTAMP
   type: 'timestamp with time zone',
   default: 'now()',
 },
+
+
+create migrate in typeorm
+yarn typeorm migration:create -n CreateProducts
+
+create migration in banco of dados
+yarn typeorm migration:run

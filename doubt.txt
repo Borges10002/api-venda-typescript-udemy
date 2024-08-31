@@ -17,6 +17,8 @@ bibliotecas
   verfificar se esta ativo
  docker ps
 
+ docker start postgres
+
 CORREÇÃO para os campos com tipo TIMESTAMP
  {
   name: 'created_at',

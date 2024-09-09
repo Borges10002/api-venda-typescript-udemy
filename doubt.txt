@@ -11,6 +11,9 @@ bibliotecas
  yarn add typeorm reflect-metadata pg
  yarn add -D tsconfig-paths
 
+ yarn add celebrate -> valiete routes
+ yarn add -D @types/joi
+
  docker
   criar
    docker run --name postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
@@ -37,3 +40,5 @@ yarn typeorm migration:create -n CreateProducts
 
 create migration in banco of dados
 yarn typeorm migration:run
+
+

@@ -41,4 +41,7 @@ yarn typeorm migration:create -n CreateProducts
 create migration in banco of dados
 yarn typeorm migration:run
 
+bcrpt password of user
+yarn add bcryptjs
+yarn add -D @types/bcryptjs
 

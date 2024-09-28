@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Borges\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add -D @types/join
+  C:\Program Files\nodejs\node.exe C:\Users\Borges\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add -D @types/ bcryptjs
 
 PATH: 
   C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\MySQL\MySQL Server 5.6\bin;C:\xampp\php\php.ini;C:\xampp\php;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\chocolatey\bin;C:\Users\Borges\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\Borges\AppData\Local\Programs\Python\Python311\;C:\Users\Borges\AppData\Local\Microsoft\WindowsApps;;C:\Users\Borges\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Borges\.dotnet\tools;C:\Users\Borges\AppData\Roaming\npm
@@ -14,8 +14,8 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fjoin: Not found
-      at params.callback [as _callback] (C:\Users\Borges\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66145:18)
+  Error: https://registry.yarnpkg.com/@types%2f: Request "https://registry.yarnpkg.com/@types%2f" returned a 405
+      at params.callback [as _callback] (C:\Users\Borges\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66154:18)
       at self.callback (C:\Users\Borges\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140890:22)
       at Request.emit (node:events:519:28)
       at Request.<anonymous> (C:\Users\Borges\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141862:10)
@@ -42,6 +42,7 @@ npm manifest:
     "devDependencies": {
       "@types/cors": "^2.8.17",
       "@types/express": "^4.17.21",
+      "@types/joi": "^17.2.3",
       "@types/node": "^20.14.9",
       "@typescript-eslint/eslint-plugin": "^7.15.0",
       "@typescript-eslint/parser": "^7.15.0",
@@ -54,6 +55,7 @@ npm manifest:
       "typescript": "^5.5.2"
     },
     "dependencies": {
+      "bcryptjs": "^2.4.3",
       "celebrate": "^15.0.3",
       "cors": "^2.8.5",
       "express": "^4.19.2",
@@ -274,6 +276,13 @@ Lockfile:
     version "2.0.4"
     resolved "https://registry.yarnpkg.com/@types/http-errors/-/http-errors-2.0.4.tgz#7eb47726c391b7345a6ec35ad7f4de469cf5ba4f"
     integrity sha512-D0CFMMtydbJAegzOyHjtiKPLlvnm3iTZyZRSZoLq2mRhDdmLfIWOCYPfQJ4cu2erKghU++QvjcUjp/5h7hESpA==
+  
+  "@types/joi@^17.2.3":
+    version "17.2.3"
+    resolved "https://registry.yarnpkg.com/@types/joi/-/joi-17.2.3.tgz#b7768ed9d84f1ebd393328b9f97c1cf3d2b94798"
+    integrity sha512-dGjs/lhrWOa+eO0HwgxCSnDm5eMGCsXuvLglMghJq32F6q5LyyNuXb41DHzrg501CKNOSSAHmfB7FDGeUnDmzw==
+    dependencies:
+      joi "*"
   
   "@types/mime@^1":
     version "1.3.5"
@@ -523,6 +532,11 @@ Lockfile:
     version "1.5.1"
     resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.5.1.tgz#1b1b440160a5bf7ad40b650f095963481903930a"
     integrity sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==
+  
+  bcryptjs@^2.4.3:
+    version "2.4.3"
+    resolved "https://registry.yarnpkg.com/bcryptjs/-/bcryptjs-2.4.3.tgz#9ab5627b93e60621ff7cdac5da9733027df1d0cb"
+    integrity sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==
   
   binary-extensions@^2.0.0:
     version "2.3.0"
@@ -1332,7 +1346,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
     integrity sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==
   
-  joi@17.x.x:
+  joi@*, joi@17.x.x:
     version "17.13.3"
     resolved "https://registry.yarnpkg.com/joi/-/joi-17.13.3.tgz#0f5cc1169c999b30d344366d384b12d92558bcec"
     integrity sha512-otDA4ldcIx+ZXsKHWmp0YizCweVRZG96J10b0FevjfuncLO1oX59THoAmHkNubYJ+9gWsYsp5k8v4ib6oDv1fA==

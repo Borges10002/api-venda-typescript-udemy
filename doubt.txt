@@ -45,3 +45,7 @@ bcrpt password of user
 yarn add bcryptjs
 yarn add -D @types/bcryptjs
 
+token
+>yarn add jsonwebtoken
+yarn add -D @types/jsonwebtoken
+

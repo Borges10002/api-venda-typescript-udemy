@@ -3,6 +3,12 @@ import AppError from "@shared/errors/AppError";
 import { NextFunction, Request, Response } from "express";
 import { verify } from "jsonwebtoken";
 
+interface TokenPayLoad {
+  iat: number;
+  exp: number;
+  sub: string;
+}
+
 export default function isAuthenticated(
   request: Request,
   response: Response,
@@ -17,7 +23,13 @@ export default function isAuthenticated(
   const [, token] = authHeader.split(" ");
 
   try {
-    const decodeToken = verify(token, authConfig.jwt.secret);
+    const decodedToken = verify(token, authConfig.jwt.secret);
+
+    const { sub } = decodedToken as TokenPayLoad;
+
+    request.user = {
+      id: sub,
+    };
 
     return next();
   } catch (error) {

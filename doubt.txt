@@ -49,3 +49,6 @@ token
 >yarn add jsonwebtoken
 yarn add -D @types/jsonwebtoken
 
+multer
+ yarn add multer
+yarn add -D @types/multer

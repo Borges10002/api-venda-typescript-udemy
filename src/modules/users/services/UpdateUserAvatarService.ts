@@ -1,10 +1,10 @@
-import upload from "@config/upload";
 import AppError from "@shared/errors/AppError";
-import fs from "fs";
 import path from "path";
+import fs from "fs";
 import { getCustomRepository } from "typeorm";
 import User from "../typeorm/entities/User";
 import UsersRepository from "../typeorm/repositories/UsersRepository";
+import uploadConfig from "@config/upload";
 
 interface IRequest {
   user_id: string;
@@ -22,11 +22,23 @@ class UpdateUserAvatarService {
     }
 
     if (user.avatar) {
-      const userAvatarFilePath = path.join(upload.directory, user.avatar);
-      const userAvatarFileExists = await fs.promises.stat(userAvatarFilePath);
+      const userAvatarFilePath = path.join(uploadConfig.directory, user.avatar);
 
-      if (userAvatarFileExists) {
+      try {
+        // Verifica se o arquivo do avatar existe
+        await fs.promises.stat(userAvatarFilePath);
+
+        // Se o arquivo existir, ele será removido
         await fs.promises.unlink(userAvatarFilePath);
+        // console.log("Avatar antigo removido com sucesso!");
+      } catch (error: any) {
+        // Se o erro for "arquivo não encontrado", captura o erro sem lançar exceção
+        if (error.code === "ENOENT") {
+          //   console.log("Avatar antigo não encontrado, nada para remover.");
+        } else {
+          // Lança o erro se for qualquer outro problema
+          throw new AppError(error);
+        }
       }
     }
 

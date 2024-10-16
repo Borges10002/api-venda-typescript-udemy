@@ -5,6 +5,7 @@ import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
 import "reflect-metadata";
 import routes from "./routes";
+import uploadConfig from "@config/upload";
 
 import { errors } from "celebrate";
 
@@ -12,6 +13,9 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+/*config of route static*/
+app.use("/files", express.static(uploadConfig.directory));
 
 app.use(routes);
 

@@ -52,3 +52,7 @@ yarn add -D @types/jsonwebtoken
 multer
  yarn add multer
 yarn add -D @types/multer
+
+e-mail
+yarn add nodemailer
+yarn add -D @types/nodemailer

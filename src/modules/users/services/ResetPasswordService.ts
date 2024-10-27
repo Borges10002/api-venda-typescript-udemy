@@ -35,6 +35,10 @@ class ResetPasswordService {
     }
 
     user.password = await hash(password, 8);
+
+    console.log(user);
+
+    await usersRepository.save(user);
   }
 }
 

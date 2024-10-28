@@ -56,3 +56,6 @@ yarn add -D @types/multer
 e-mail
 yarn add nodemailer
 yarn add -D @types/nodemailer
+
+sign email
+yarn add handlebars

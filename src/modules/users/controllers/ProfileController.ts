@@ -1,12 +1,10 @@
 import { Request, Response } from "express";
-import ListUserService from "../services/ListUserService";
-import CreateUserService from "../services/CreateUserService";
-import ShowProductService from "@modules/products/services/ShowProductService";
+import ShowProfileService from "../services/ShowProfileService";
 import UpdateProfileService from "../services/UpdateProfileService";
 
 export default class ProfileController {
-  public async index(request: Request, response: Response): Promise<Response> {
-    const showProfile = new ShowProductService();
+  public async show(request: Request, response: Response): Promise<Response> {
+    const showProfile = new ShowProfileService();
     const user_id = request.user.id;
 
     const user = await showProfile.execute({ user_id });
@@ -14,7 +12,7 @@ export default class ProfileController {
     return response.json(user);
   }
 
-  public async create(request: Request, response: Response): Promise<Response> {
+  public async update(request: Request, response: Response): Promise<Response> {
     const user_id = request.user.id;
     const { name, email, password, old_password } = request.body;
 
